@@ -346,7 +346,7 @@ static const void *YKTableSwipeContainerViewBackgroundColorKey = &YKTableSwipeCo
         if (!([self.rightView isDescendantOfView:self.swipeContainerView] || [self.leftView isDescendantOfView:self.swipeContainerView])) {
             initializeGestureRecognizerBeginningState();
         }
-
+        
         // lock cell when trying to swipe to the opposite direction
         if (self.startDirection != YATableSwipeDirectionNone) {
             if (translation.x < 0 &&
@@ -366,7 +366,17 @@ static const void *YKTableSwipeContainerViewBackgroundColorKey = &YKTableSwipeCo
                 self.startDirection = YATableSwipeDirectionRight;
             }
         }
-
+        
+        // limit position
+        if (self.leftView != nil && translation.x > 0 && translation.x > self.leftView.bounds.size.width)
+        {
+            translation.x = self.leftView.bounds.size.width;
+        }
+        if (self.rightView != nil && translation.x < 0 && translation.x < -self.rightView.bounds.size.width)
+        {
+            translation.x = -self.rightView.bounds.size.width;
+        }
+        
         [self.swipeView.layer setTransform:CATransform3DMakeTranslation(translation.x, 0.0, 1.0)];
         if (self.swipeEffect == YATableSwipeEffectTrail) {
             if (fabs(translation.x) < CGRectGetWidth(self.leftView.frame)) {

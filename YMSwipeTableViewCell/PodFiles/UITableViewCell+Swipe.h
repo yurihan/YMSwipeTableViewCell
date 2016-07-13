@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, YATableSwipeDirection) {
     /** Left to right swipe */
     YATableSwipeDirectionRight = 1,
     /** Right to left swipe */
-    YATableSwipeDirectionLeft = 2
+    YATableSwipeDirectionLeft = 2,
 };
 
 /**
