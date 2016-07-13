@@ -130,6 +130,6 @@ typedef void (^YMTableCellDidChangeModeBlock)(UITableViewCell *cell, YATableSwip
  *
  */
 - (void)resetSwipe:(void (^)(BOOL finished))completion withAnimation:(BOOL)animate;
-
+- (void)goToCurrentSwipeMode:(void (^)(BOOL finished))completion withAnimation:(BOOL)animate;
 
 @end
