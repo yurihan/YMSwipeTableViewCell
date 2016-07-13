@@ -368,13 +368,13 @@ static const void *YKTableSwipeContainerViewBackgroundColorKey = &YKTableSwipeCo
         }
         
         // limit position
-        if (self.leftView != nil && translation.x > 0 && translation.x > self.leftView.bounds.size.width)
+        if (self.leftView != nil && translation.x > 0 && translation.x > self.leftView.bounds.size.width+20)
         {
-            translation.x = self.leftView.bounds.size.width;
+            translation.x = self.leftView.bounds.size.width+20;
         }
-        if (self.rightView != nil && translation.x < 0 && translation.x < -self.rightView.bounds.size.width)
+        if (self.rightView != nil && translation.x < 0 && translation.x < -self.rightView.bounds.size.width-20)
         {
-            translation.x = -self.rightView.bounds.size.width;
+            translation.x = -self.rightView.bounds.size.width-20;
         }
         
         [self.swipeView.layer setTransform:CATransform3DMakeTranslation(translation.x, 0.0, 1.0)];
