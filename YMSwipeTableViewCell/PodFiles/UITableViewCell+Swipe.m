@@ -36,7 +36,7 @@ static const void *YKTableSwipeContainerViewBackgroundColorKey = &YKTableSwipeCo
 @property (nonatomic, strong) UIView *rightView;
 @property (nonatomic, strong) UIView *swipeContainerView;
 @property (nonatomic, strong) UIView *swipeView;
-@property (nonatomic, readwrite) YATableSwipeMode swipeMode;
+//@property (nonatomic, readwrite) YATableSwipeMode swipeMode;
 @property (nonatomic, readwrite) NSInteger startDirection;
 @end
 

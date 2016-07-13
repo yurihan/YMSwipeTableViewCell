@@ -84,6 +84,7 @@ typedef void (^YMTableCellDidChangeModeBlock)(UITableViewCell *cell, YATableSwip
 
 /** The current swipe state of the cell. */
 @property (nonatomic, readwrite) YATableSwipeMode currentSwipeMode;
+@property (nonatomic, readwrite) YATableSwipeMode swipeMode;
 
 /** This block is called during a swipe. */
 @property (nonatomic, strong) YMTableCellDidSwipeBlock swipeBlock;
